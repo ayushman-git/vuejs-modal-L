@@ -2,7 +2,7 @@
   <input type="text" ref="name" />
   <button @click="submit">Submit</button>
   <p>{{ name }}</p>
-  <button @click="toggleModal">Modal</button>
+  <button @click.shift="toggleModal">Modal (Shift + Click)</button>
   <Modal
     @close="toggleModal"
     v-if="showModal"

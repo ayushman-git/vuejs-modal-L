@@ -1,6 +1,6 @@
 <template>
-  <div class="backdrop" @click="closeModal">
-    <div class="modal" :class="{ diff: theme === 'violet' }">
+  <div class="backdrop" @click.self="closeModal">
+    <div class="modal" :class="{ diff: theme === 'violet' }" ref="modal">
       <h1>{{ header }}</h1>
       <p>{{ content }}</p>
     </div>

@@ -10,3 +10,13 @@ html, body {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.another-box {
+  background-color: brown;
+  width: 50%;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

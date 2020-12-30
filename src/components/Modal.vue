@@ -1,7 +1,9 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{ diff: theme === 'violet' }" ref="modal">
-      <slot></slot>
+      <slot>
+        <h1>This is the fallback slot</h1>
+      </slot>
       <div>
         <slot name="list"></slot>
       </div>
@@ -49,4 +51,6 @@ h1 {
 .diff > h1 {
   color: white;
 }
+
+
 </style>

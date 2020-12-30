@@ -2,7 +2,14 @@
   <input type="text" ref="name" />
   <button @click="submit">Submit</button>
   <p>{{ name }}</p>
-  <Modal />
+  <button @click="toggleModal">Modal</button>
+  <Modal
+    @close="toggleModal"
+    v-if="showModal"
+    :header="header"
+    :content="content"
+    :theme="theme"
+  />
 </template>
 
 <script>
@@ -13,9 +20,16 @@ export default {
   data() {
     return {
       name: "",
+      header: "Header for modal",
+      content: "This is the content inside modal",
+      theme: "violet",
+      showModal: false,
     };
   },
   methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
     submit() {
       const { name } = this.$refs;
       this.name = name.value;
@@ -27,5 +41,4 @@ export default {
 </script>
 
 <style>
-
 </style>

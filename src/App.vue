@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="text" ref="name" />
+  <button @click="submit">Submit</button>
+  <p>{{ name }}</p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      name: "",
+    };
+  },
+  methods: {
+    submit() {
+      const { name } = this.$refs;
+      this.name = name.value;
+    },
+  },
+};
 </script>
 
 <style>

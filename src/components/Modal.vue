@@ -1,8 +1,10 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{ diff: theme === 'violet' }" ref="modal">
-      <h1>{{ header }}</h1>
-      <p>{{ content }}</p>
+      <slot></slot>
+      <div>
+        <slot name="list"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -10,12 +12,12 @@
 <script>
 export default {
   name: "Modal",
-  props: ["content", "header", "theme"],
+  props: ["theme"],
   methods: {
     closeModal() {
-      this.$emit('close')
-    }
-  }
+      this.$emit("close");
+    },
+  },
 };
 </script>
 

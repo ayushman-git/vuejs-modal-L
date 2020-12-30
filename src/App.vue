@@ -6,10 +6,19 @@
   <Modal
     @close="toggleModal"
     v-if="showModal"
-    :header="header"
-    :content="content"
     :theme="theme"
-  />
+  >
+  <template v-slot:list>
+    <ul>
+      <li>Generated</li>
+      <li>using</li>
+      <li>named</li>
+      <li>Slots</li>
+    </ul>
+  </template>
+    <h1>Title</h1>
+    <p>This is the content</p>
+  </Modal>
 </template>
 
 <script>

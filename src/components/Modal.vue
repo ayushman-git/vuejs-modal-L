@@ -1,6 +1,7 @@
 <template>
   <div class="backdrop">
     <div class="modal">
+      <h1>Title</h1>
       <p>Modal content</p>
     </div>
   </div>
@@ -26,5 +27,9 @@ export default {
     background: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
+  }
+
+  h1 {
+    color: brown;
   }
 </style>

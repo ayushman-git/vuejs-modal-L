@@ -3,26 +3,29 @@
   <button @click="submit">Submit</button>
   <p>{{ name }}</p>
   <button @click.shift="toggleModal">Modal (Shift + Click)</button>
-  <Modal @close="toggleModal" v-if="showModal" :theme="theme">
-    <template v-slot:list>
-      <ul>
-        <li>Generated</li>
-        <li>using</li>
-        <li>named</li>
-        <li>Slots</li>
-      </ul>
-    </template>
-    <h1>This is the default slot</h1>
-    <p>This is the content</p>
-  </Modal>
+  <teleport to="#modal">
+    <Modal @close="toggleModal" v-if="showModal" :theme="theme">
+      <template v-slot:list>
+        <ul>
+          <li>Generated</li>
+          <li>using</li>
+          <li>named</li>
+          <li>Slots</li>
+        </ul>
+      </template>
+      <h1>This is the default slot</h1>
+      <p>This is the content</p>
+    </Modal>
+  </teleport>
 
   <button @click.alt="toggleModalTwo">Modal (Alt + Click)</button>
-
-  <Modal @close="toggleModalTwo" v-if="showModalTwo">
-    <template v-slot:list>
-      <div class="another-box">Empty</div>
-    </template>
-  </Modal>
+  <teleport to="#modal">
+    <Modal @close="toggleModalTwo" v-if="showModalTwo">
+      <template v-slot:list>
+        <div class="another-box">Empty</div>
+      </template>
+    </Modal>
+  </teleport>
 </template>
 
 <script>
